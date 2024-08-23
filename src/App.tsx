@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   IonApp,
+  IonContent,
   IonIcon,
   IonLabel,
   IonTab,
@@ -32,36 +33,45 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { IonReactRouter } from '@ionic/react-router';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonTabs>
-      <IonTab tab="tab1">
-        <Tab1/>
-      </IonTab>
-      <IonTab tab="tab2">
-        <Tab2/>
-      </IonTab>
-      <IonTab tab="tab3">
-        <Tab3/>
-      </IonTab>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1">
-          <IonIcon aria-hidden="true" icon={triangle} />
-          <IonLabel>Tab 1</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2">
-          <IonIcon aria-hidden="true" icon={ellipse} />
-          <IonLabel>Tab 2</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3">
-          <IonIcon aria-hidden="true" icon={square} />
-          <IonLabel>Tab 3</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
-    </IonTabs>
+    <IonReactRouter>
+      <IonTabs>
+        <IonTab tab="tab1">
+          <IonContent>
+            Tab 1
+          </IonContent>
+        </IonTab>
+        <IonTab tab="tab2">
+          <IonContent>
+          Tab 2
+          </IonContent>
+        </IonTab>
+        <IonTab tab="tab3">
+          <IonContent>
+          Tab 3
+          </IonContent>
+        </IonTab>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="tab1">
+            <IonIcon aria-hidden="true" icon={triangle} />
+            <IonLabel>Tab 1</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab2">
+            <IonIcon aria-hidden="true" icon={ellipse} />
+            <IonLabel>Tab 2</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab3">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Tab 3</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
+    </IonReactRouter>
   </IonApp>
 );
 
